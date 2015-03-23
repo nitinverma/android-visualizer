@@ -1,5 +1,9 @@
 # .gitignore file from: https://github.com/github/gitignore
 
+.idea/
+*.iml
+target/
+
 # built application files
 *.apk
 *.ap_

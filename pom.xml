@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>edu.nitin.visualizer</groupId>
+    <artifactId>visualizer</artifactId>
+    <name>Visualizer</name>
+    <version>0.1.0</version>
+    <packaging>apk</packaging>
+    
+    <properties>
+        <!-- use UTF-8 for everything -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>android-support</id>
+            <!-- <url>file://${env.ANDROID_HOME}/extras/android/m2repository</url> -->
+            <url>file:///usr/local/opt/android-sdk/extras/android/m2repository</url>
+        </repository>
+        <!--
+        <repository>
+            <id>grepcode</id>
+            <url>http://repository.grepcode.com/java/ext</url>
+        </repository>
+        -->
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.android.support</groupId>
+            <artifactId>support-v4</artifactId>
+            <version>19.0.1</version>
+        </dependency>
+
+        <!--
+        <dependency>
+            <groupId>com.android.support</groupId>
+            <artifactId>gridlayout-v7</artifactId>
+            <version>19.0.1</version>
+            <type>aar</type>
+            <scope>compile</scope>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <!--
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>3.9.0-rc.1</version>
+                    <configuration>
+
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                                        <artifactId>android-maven-plugin</artifactId>
+                                        <versionRange>[3.8.0,)</versionRange>
+                                        <goals>
+                                            <goal>consume-aar</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        -->
+
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>3.9.0-rc.1</version>
+                <configuration>
+                    <sdk>
+                        <platform>19</platform>
+                    </sdk>
+                    <!-- <deleteConflictingFiles>true</deleteConflictingFiles> -->
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
